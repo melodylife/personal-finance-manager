@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		702848891D2617110066622C /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702848881D2617110066622C /* JsonParser.swift */; };
+		7028488B1D2663880066622C /* HTTPRequestCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7028488A1D2663880066622C /* HTTPRequestCaller.swift */; };
+		7028488D1D2664FF0066622C /* BasicDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7028488C1D2664FF0066622C /* BasicDefinition.swift */; };
+		7056D23A1D1E53CC009BE9FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D2391D1E53CC009BE9FC /* AppDelegate.swift */; };
+		7056D23C1D1E53CC009BE9FC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */; };
+		7056D23F1D1E53CC009BE9FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7056D23D1D1E53CC009BE9FC /* Main.storyboard */; };
+		7056D2411D1E53CC009BE9FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7056D2401D1E53CC009BE9FC /* Assets.xcassets */; };
+		7056D2441D1E53CC009BE9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7056D2421D1E53CC009BE9FC /* LaunchScreen.storyboard */; };
+		7056D24C1D1E636B009BE9FC /* RESTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D24B1D1E636B009BE9FC /* RESTService.swift */; };
+		709E4B5A1D241C42008E51F5 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E4B591D241C42008E51F5 /* RegViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		702848881D2617110066622C /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		7028488A1D2663880066622C /* HTTPRequestCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestCaller.swift; sourceTree = "<group>"; };
+		7028488C1D2664FF0066622C /* BasicDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDefinition.swift; sourceTree = "<group>"; };
+		7056D2361D1E53CC009BE9FC /* Personal Financial Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personal Financial Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7056D2391D1E53CC009BE9FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		7056D23E1D1E53CC009BE9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7056D2401D1E53CC009BE9FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7056D2431D1E53CC009BE9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7056D2451D1E53CC009BE9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7056D24B1D1E636B009BE9FC /* RESTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTService.swift; sourceTree = "<group>"; };
+		709E4B591D241C42008E51F5 /* RegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7056D2331D1E53CC009BE9FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7028488E1D269D280066622C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */,
+				709E4B591D241C42008E51F5 /* RegViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7028488F1D269DA80066622C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7056D24B1D1E636B009BE9FC /* RESTService.swift */,
+				702848881D2617110066622C /* JsonParser.swift */,
+				7028488A1D2663880066622C /* HTTPRequestCaller.swift */,
+				7028488C1D2664FF0066622C /* BasicDefinition.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		7056D22D1D1E53CC009BE9FC = {
+			isa = PBXGroup;
+			children = (
+				7056D2381D1E53CC009BE9FC /* Personal Financial Management */,
+				7056D2371D1E53CC009BE9FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7056D2371D1E53CC009BE9FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7056D2361D1E53CC009BE9FC /* Personal Financial Management.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7056D2381D1E53CC009BE9FC /* Personal Financial Management */ = {
+			isa = PBXGroup;
+			children = (
+				7056D2391D1E53CC009BE9FC /* AppDelegate.swift */,
+				7028488F1D269DA80066622C /* Utils */,
+				7028488E1D269D280066622C /* ViewControllers */,
+				7056D23D1D1E53CC009BE9FC /* Main.storyboard */,
+				7056D2421D1E53CC009BE9FC /* LaunchScreen.storyboard */,
+				7056D2451D1E53CC009BE9FC /* Info.plist */,
+				7056D2401D1E53CC009BE9FC /* Assets.xcassets */,
+			);
+			path = "Personal Financial Management";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7056D2351D1E53CC009BE9FC /* Personal Financial Management */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7056D2481D1E53CC009BE9FC /* Build configuration list for PBXNativeTarget "Personal Financial Management" */;
+			buildPhases = (
+				7056D2321D1E53CC009BE9FC /* Sources */,
+				7056D2331D1E53CC009BE9FC /* Frameworks */,
+				7056D2341D1E53CC009BE9FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Personal Financial Management";
+			productName = "Personal Financial Management";
+			productReference = 7056D2361D1E53CC009BE9FC /* Personal Financial Management.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7056D22E1D1E53CC009BE9FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Chang Sun";
+				TargetAttributes = {
+					7056D2351D1E53CC009BE9FC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 65Q8DMYU84;
+					};
+				};
+			};
+			buildConfigurationList = 7056D2311D1E53CC009BE9FC /* Build configuration list for PBXProject "Personal Financial Management" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7056D22D1D1E53CC009BE9FC;
+			productRefGroup = 7056D2371D1E53CC009BE9FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7056D2351D1E53CC009BE9FC /* Personal Financial Management */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7056D2341D1E53CC009BE9FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7056D2441D1E53CC009BE9FC /* LaunchScreen.storyboard in Resources */,
+				7056D2411D1E53CC009BE9FC /* Assets.xcassets in Resources */,
+				7056D23F1D1E53CC009BE9FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7056D2321D1E53CC009BE9FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7028488B1D2663880066622C /* HTTPRequestCaller.swift in Sources */,
+				7056D24C1D1E636B009BE9FC /* RESTService.swift in Sources */,
+				7028488D1D2664FF0066622C /* BasicDefinition.swift in Sources */,
+				702848891D2617110066622C /* JsonParser.swift in Sources */,
+				7056D23C1D1E53CC009BE9FC /* LogInViewController.swift in Sources */,
+				7056D23A1D1E53CC009BE9FC /* AppDelegate.swift in Sources */,
+				709E4B5A1D241C42008E51F5 /* RegViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7056D23D1D1E53CC009BE9FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7056D23E1D1E53CC009BE9FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7056D2421D1E53CC009BE9FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7056D2431D1E53CC009BE9FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7056D2461D1E53CC009BE9FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7056D2471D1E53CC009BE9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7056D2491D1E53CC009BE9FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Personal Financial Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "changchangyo.Personal-Financial-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		7056D24A1D1E53CC009BE9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Personal Financial Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "changchangyo.Personal-Financial-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7056D2311D1E53CC009BE9FC /* Build configuration list for PBXProject "Personal Financial Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7056D2461D1E53CC009BE9FC /* Debug */,
+				7056D2471D1E53CC009BE9FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7056D2481D1E53CC009BE9FC /* Build configuration list for PBXNativeTarget "Personal Financial Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7056D2491D1E53CC009BE9FC /* Debug */,
+				7056D24A1D1E53CC009BE9FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7056D22E1D1E53CC009BE9FC /* Project object */;
+}
