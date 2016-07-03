@@ -12,20 +12,25 @@ class RESTService{
     
     let httpHandler:HTTPRequestCaller = HTTPRequestCaller()
     
-    func loginVerify(userID: String , pwd: String) -> Void{
+    func loginVerify(userID: String , pwd: String) -> Bool{
         let queryParams = ["userid":userID , "password":pwd]
         let httpHandler:HTTPRequestCaller = HTTPRequestCaller()
         let hpMethod = HTTP_METHOD.GET
         let (rst , jsonRst) = httpHandler.httpCall("appinit/login", queryPara: queryParams, httpMethod: hpMethod.rawValue, uploadData: nil)
         
         if(rst){
-            if let httpRst = jsonRst?.getValue("result"){
-                print(httpRst)
+            if let httpRst = jsonRst?.getValue("result") as? String{
+                return (REST_RESULT.VERIFIED.rawValue == Int(httpRst))
+            }
+            else{
+                return false
             }
         }
         else{
             print("Failed to call the service")
+            return false
         }
+        
     }
     
     func  regNewUser(emailAddr: String , pwd: String) -> Void {

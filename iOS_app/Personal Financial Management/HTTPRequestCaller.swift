@@ -27,7 +27,8 @@ class HTTPRequestCaller{
         
         let (blRst , jsonRst): (Bool , JsonParser?) = httpCall(path, queryPara: [:], httpMethod: method, uploadData: nil)
         
-        return blRst && ("success" == jsonRst!.getValue("result"))
+        //The getValue returns AnyObject. So it needs explicitly type casting. 
+        return blRst && (REST_RESULT.SUCCESS.rawValue == Int(jsonRst!.getValue("result") as! NSNumber))
     }
     
     //Universal http request handler
@@ -46,8 +47,6 @@ class HTTPRequestCaller{
             }
         }
         let urlStr = "\(serviceURL!)/\(handlerPath)\(queryStr)"
-        
-        print("This is the url \(urlStr)")
         
         let reqURL = NSURL(string: urlStr)
         let reqTemp = NSMutableURLRequest(URL: reqURL!)

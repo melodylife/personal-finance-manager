@@ -31,8 +31,9 @@ class JsonParser{
     }
     
     //return the key pointed value of json
-    func getValue(jsonKey: String) -> String? {
-        if let rst = jsonData[jsonKey] as? String{
+    //The getValue returns either string or subset of the json node.
+    func getValue(jsonKey: String) -> AnyObject? {
+        if let rst = jsonData[jsonKey]{
             return rst
         }
         return nil

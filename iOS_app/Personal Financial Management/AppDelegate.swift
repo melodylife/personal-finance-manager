@@ -19,13 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let serviceCheck = HTTPRequestCaller()
         if(serviceCheck.isConnected()){
-            print("The service is on")
+            FIRAnalytics.logEventWithName("ServiceOn", parameters: [:])
         }
         else{
-            print("The service is off")
+            FIRAnalytics.logEventWithName("ServiceDown", parameters: [:])
         }
         
         FIRApp.configure()
+        FIRAnalytics.logEventWithName("OpenApp", parameters: [:])
         return true
     }
 
