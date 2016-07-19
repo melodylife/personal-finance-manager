@@ -21,7 +21,7 @@ class LogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func loginBttnClk(sender: UIButton) {
+    @IBAction func loginBttnClk(_ sender: UIButton) {
         let logControl: RESTService = RESTService()
         if(idField.text!.isEmpty || pwdField.text!.isEmpty){
             print("The inputs are missing")
@@ -32,10 +32,10 @@ class LogInViewController: UIViewController {
         }
     }
 
-    @IBAction func switchRegistrationView(sender: UIButton) {
+    @IBAction func switchRegistrationView(_ sender: UIButton) {
         let stroyBoard = UIStoryboard(name: "Main" , bundle: nil);
-        let regView = stroyBoard.instantiateViewControllerWithIdentifier("regView")
-        self.presentViewController(regView, animated: true, completion: nil)
+        let regView = stroyBoard.instantiateViewController(withIdentifier: "regView")
+        self.present(regView, animated: true, completion: nil)
     }
     
     
