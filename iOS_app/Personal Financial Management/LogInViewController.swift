@@ -27,8 +27,12 @@ class LogInViewController: UIViewController {
             print("The inputs are missing")
         }
         else{
-            logControl.loginVerify(idField.text!, pwd:pwdField.text!)
-            print("Button clicked")
+
+            if(logControl.loginVerify(idField.text!, pwd:pwdField.text!)){
+                let storyBoard = UIStoryboard(name: "Main" , bundle: nil)
+                let mainView = storyBoard.instantiateViewController(withIdentifier: "mainPageView")
+                self.present(mainView , animated: true , completion: nil)
+            }
         }
     }
 
@@ -37,8 +41,5 @@ class LogInViewController: UIViewController {
         let regView = stroyBoard.instantiateViewController(withIdentifier: "regView")
         self.present(regView, animated: true, completion: nil)
     }
-    
-    
-
 }
 
