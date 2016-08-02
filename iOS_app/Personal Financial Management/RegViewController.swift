@@ -37,6 +37,11 @@ class RegViewController: UIViewController {
     }
     */
 
+    @IBAction func bakSignClk(_ sender: UIButton) {
+        bakSignInView()
+    }
+    
+    
     @IBAction func regBtnClk(_ sender: UIButton) {
         
         //Prepare aler windown
@@ -66,6 +71,13 @@ class RegViewController: UIViewController {
         serviceHandler.regNewUser(emailAddr.text!, pwd: pwdFirst!.text!)
         
         //Switch back to the login window is sign-up succeeds
+        /*let storyBoard = UIStoryboard(name: "Main" , bundle: nil);
+        let logViewController = storyBoard.instantiateViewController(withIdentifier: "logWindow")
+        self.present(logViewController, animated: true, completion: nil)*/
+        bakSignInView()
+    }
+    
+    private func bakSignInView() -> Void{
         let storyBoard = UIStoryboard(name: "Main" , bundle: nil);
         let logViewController = storyBoard.instantiateViewController(withIdentifier: "logWindow")
         self.present(logViewController, animated: true, completion: nil)

@@ -18,6 +18,7 @@
 		7056D2441D1E53CC009BE9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7056D2421D1E53CC009BE9FC /* LaunchScreen.storyboard */; };
 		7056D24C1D1E636B009BE9FC /* RESTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D24B1D1E636B009BE9FC /* RESTService.swift */; };
 		709E4B5A1D241C42008E51F5 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E4B591D241C42008E51F5 /* RegViewController.swift */; };
+		70F34B9C1D4331BE0024FD0F /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F34B9B1D4331BE0024FD0F /* MainPageViewController.swift */; };
 		9336D6EC6562929598DCEA18 /* Pods_Personal_Financial_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AD3C7B3666D339390E58DF /* Pods_Personal_Financial_Management.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		7056D2451D1E53CC009BE9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7056D24B1D1E636B009BE9FC /* RESTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTService.swift; sourceTree = "<group>"; };
 		709E4B591D241C42008E51F5 /* RegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		70F34B9B1D4331BE0024FD0F /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		74AD3C7B3666D339390E58DF /* Pods_Personal_Financial_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Personal_Financial_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6A7DCE406B678A6302A63F /* Pods-Personal Financial Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Personal Financial Management.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Personal Financial Management/Pods-Personal Financial Management.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 			children = (
 				7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */,
 				709E4B591D241C42008E51F5 /* RegViewController.swift */,
+				70F34B9B1D4331BE0024FD0F /* MainPageViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F34B9C1D4331BE0024FD0F /* MainPageViewController.swift in Sources */,
 				7028488B1D2663880066622C /* HTTPRequestCaller.swift in Sources */,
 				7056D24C1D1E636B009BE9FC /* RESTService.swift in Sources */,
 				7028488D1D2664FF0066622C /* BasicDefinition.swift in Sources */,
