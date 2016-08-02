@@ -14,6 +14,7 @@ var userInfoSchema = new schema({
   nick_name: String,
   payment_method: [],
   age: Number,
+  bookPack: {type: [String] , default:["Life"]},
   password: {
     salt: String,
     hashedPwd: String
@@ -24,6 +25,8 @@ var userInfo = mongoose.model('userInfo' , userInfoSchema);
 
 exports.addNewUser = function(jsonStr , res){
   var userinfo = JSON.parse(jsonStr);
+  
+  //secure the password 
   var plainPwd = userinfo.password;
   var salt = util.ramString(plainPwd.length);
   var pwdObj = new Object();
@@ -32,46 +35,12 @@ exports.addNewUser = function(jsonStr , res){
   pwdObj.hashedPwd = md5(pwdPayload);
   userinfo.password = pwdObj;
   var newUser = new userInfo(userinfo);
-
-  var rstObj = new Object();
-  rstObj.result = constants.resStatus.SCUCCESS;
-  newUser.save(function(err){
-    if(!err){
-      res.send(rstObj);
-      return;
-    }
-    console.log('failed to add a new user ' + err.message);
-    rstObj.result = constants.resStatus.FAILED;
-    rstObj.erromsg = err.message;
-    res.send(rstObj);
-  });
+  
+  util.saveTable("userinfo" , newUser , res);
 }
 
 exports.findUser = function(userID , res){
-  userInfo.find({_id: userID} , function(err , res){
-    if(!err){
-      if(0 == rst.length || null == rst){
-        rst = new Object();
-        rst.result = constants.resStatus.NO_DATA;
-        console.log('there\'s no data');
-      }
-      else{
-        //rst = new Object();
-        rst.result = constants.resStatus.SUCCESS;
-        var data = new Object 
-
-        for(var i = 0; i < rst.length; i++){
-          data[i]._id = "N/A";
-          data[i].password = new Object();
-        }
-      }
-      rst.data = data;
-      res.send(rst);
-      return;
-    }
-    console.log(err.message);
-    res.send({"result": constants.resStatus.FAILED, "error":message});
-  });
+  util.findWithKey("userInfo" , userInfo , {_id: userID} , res);
 }
 
 exports.login = function(userID, userPwd , res){
