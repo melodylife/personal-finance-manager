@@ -27,7 +27,7 @@ exports.saveTable = function(objName , optObject , res){
   });
 }
 
-exports.findWithKey = function(objName , optObj , condition , res){
+exports.findWithCondition = function(objName , optObj , condition , res){
   optObj.find(condition , function(err , data){
     if(!err){
       if(0 == data.length || null == data){

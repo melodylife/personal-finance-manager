@@ -40,7 +40,7 @@ exports.addNewUser = function(jsonStr , res){
 }
 
 exports.findUser = function(userID , res){
-  util.findWithKey("userInfo" , userInfo , {_id: userID} , res);
+  util.findWithCondition("userInfo" , userInfo , {_id: userID} , res);
 }
 
 exports.login = function(userID, userPwd , res){
