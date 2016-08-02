@@ -12,10 +12,10 @@ class JsonParser{
     var jsonData = [String : AnyObject]()
     private var parserSuccess: Bool = true
     
-    init(rawData: NSData){
+    init(rawData: Data){
         do
         {
-            let json = try NSJSONSerialization.JSONObjectWithData(rawData, options: .AllowFragments)
+            let json = try JSONSerialization.jsonObject(with: rawData, options: .allowFragments)
             jsonData = json as! [String : AnyObject]
             
         }
@@ -32,7 +32,7 @@ class JsonParser{
     
     //return the key pointed value of json
     //The getValue returns either string or subset of the json node.
-    func getValue(jsonKey: String) -> AnyObject? {
+    func getValue(_ jsonKey: String) -> AnyObject? {
         if let rst = jsonData[jsonKey]{
             return rst
         }

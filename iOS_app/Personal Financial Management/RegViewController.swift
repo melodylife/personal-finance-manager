@@ -37,29 +37,29 @@ class RegViewController: UIViewController {
     }
     */
 
-    @IBAction func regBtnClk(sender: UIButton) {
+    @IBAction func regBtnClk(_ sender: UIButton) {
         
         //Prepare aler windown
-        let altAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let altAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         
-        let pwdAlert:UIAlertController = UIAlertController(title: "Please Attention", message: "Password can't be blank", preferredStyle:.Alert)
+        let pwdAlert:UIAlertController = UIAlertController(title: "Please Attention", message: "Password can't be blank", preferredStyle:.alert)
         pwdAlert.addAction(altAction)
         
         //E-mail validtion
         if((nil == emailAddr.text) || emailAddr.text!.isEmpty){
             pwdAlert.message = "Please input email address"
-            presentViewController(pwdAlert, animated: true, completion: nil)
+            present(pwdAlert, animated: true, completion: nil)
             return
         }
         
         //Password validation
         if ((nil == pwdFirst.text) || pwdFirst.text!.isEmpty){
-            self.presentViewController(pwdAlert, animated: true, completion: nil)
+            self.present(pwdAlert, animated: true, completion: nil)
             return
         }
         else if(pwdFirst.text != pwdRepeat.text){
             pwdAlert.message = "Passwords are not same"
-            presentViewController(pwdAlert, animated: true, completion: nil)
+            present(pwdAlert, animated: true, completion: nil)
             return
         }
 
@@ -67,7 +67,7 @@ class RegViewController: UIViewController {
         
         //Switch back to the login window is sign-up succeeds
         let storyBoard = UIStoryboard(name: "Main" , bundle: nil);
-        let logViewController = storyBoard.instantiateViewControllerWithIdentifier("logWindow")
-        self.presentViewController(logViewController, animated: true, completion: nil)
+        let logViewController = storyBoard.instantiateViewController(withIdentifier: "logWindow")
+        self.present(logViewController, animated: true, completion: nil)
     }
 }

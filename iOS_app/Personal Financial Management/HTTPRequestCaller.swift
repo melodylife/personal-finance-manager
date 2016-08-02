@@ -13,12 +13,12 @@ class HTTPRequestCaller{
 
     var serviceURL: String? = nil
     init(){
-        if let infoPlist = NSBundle.mainBundle().infoDictionary{
+        if let infoPlist = Bundle.main.infoDictionary{
             serviceURL = infoPlist["Service URL"] as? String
         }
     }
     
-    let semaphore = dispatch_semaphore_create(SEMAHORE.HTTP_CALL.rawValue)
+    let semaphore = DispatchSemaphore(value: SEMAHORE.http_CALL.rawValue)
     
     //Check the availability of service
     func isConnected() -> Bool {
@@ -28,11 +28,11 @@ class HTTPRequestCaller{
         let (blRst , jsonRst): (Bool , JsonParser?) = httpCall(path, queryPara: [:], httpMethod: method, uploadData: nil)
         
         //The getValue returns AnyObject. So it needs explicitly type casting. 
-        return blRst && (REST_RESULT.SUCCESS.rawValue == Int(jsonRst!.getValue("result") as! NSNumber))
+        return blRst && (REST_RESULT.success.rawValue == Int(jsonRst!.getValue("result") as! NSNumber))
     }
     
     //Universal http request handler
-    func httpCall(handlerPath: String , queryPara:[String:String] , httpMethod:HTTP_METHOD.RawValue , uploadData:NSData?) -> (Bool , JsonParser?){
+    func httpCall(_ handlerPath: String , queryPara:[String:String] , httpMethod:HTTP_METHOD.RawValue , uploadData:Data?) -> (Bool , JsonParser?){
         var runTup:(Bool , JsonParser?) = (false , nil)
         
         if(nil == serviceURL){
@@ -48,23 +48,26 @@ class HTTPRequestCaller{
         }
         let urlStr = "\(serviceURL!)/\(handlerPath)\(queryStr)"
         
-        let reqURL = NSURL(string: urlStr)
-        let reqTemp = NSMutableURLRequest(URL: reqURL!)
-        reqTemp.HTTPMethod = httpMethod
-        reqTemp.HTTPBody = uploadData
+        let reqURL = URL(string: urlStr)
+        var reqTemp = URLRequest(url: reqURL!)
+        reqTemp.httpMethod = httpMethod
+        reqTemp.httpBody = uploadData
         
         //Call the REST service
-        let session = NSURLSession.sharedSession()
+        //let session = URLSession()
+        let session = URLSession.shared
+        
         
         var isConnected = true
-        let task = session.dataTaskWithRequest(reqTemp){
-        (data , response , error) -> Void in
+  
+        let task = session.dataTask(with:reqTemp,completionHandler:{
+        (data , response , error) in
             if((error) != nil){
                 //print("Here's the connection error \(error!.description)")
                 isConnected = false
             }
             if (isConnected){
-                let httpRes = response as! NSHTTPURLResponse
+                let httpRes = response as! HTTPURLResponse
                 let statusCode = httpRes.statusCode
             
                 if(200 == statusCode){
@@ -78,12 +81,11 @@ class HTTPRequestCaller{
             
                 }
             }
-             dispatch_semaphore_signal(self.semaphore)
-            
-        }
+            self.semaphore.signal()
+            })
         task.resume()
         
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        semaphore.wait(timeout: DispatchTime.distantFuture)
         return runTup
     }
 

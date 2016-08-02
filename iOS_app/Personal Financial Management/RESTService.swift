@@ -12,7 +12,7 @@ class RESTService{
     
     let httpHandler:HTTPRequestCaller = HTTPRequestCaller()
     
-    func loginVerify(userID: String , pwd: String) -> Bool{
+    func loginVerify(_ userID: String , pwd: String) -> Bool{
         let queryParams = ["userid":userID , "password":pwd]
         let httpHandler:HTTPRequestCaller = HTTPRequestCaller()
         let hpMethod = HTTP_METHOD.GET
@@ -20,7 +20,7 @@ class RESTService{
         
         if(rst){
             if let httpRst = jsonRst?.getValue("result") as? String{
-                return (REST_RESULT.VERIFIED.rawValue == Int(httpRst))
+                return (REST_RESULT.verified.rawValue == Int(httpRst))
             }
             else{
                 return false
@@ -33,14 +33,14 @@ class RESTService{
         
     }
     
-    func  regNewUser(emailAddr: String , pwd: String) -> Void {
+    func  regNewUser(_ emailAddr: String , pwd: String) -> Void {
         //Please do use _id since this is the default key of mongoDB
         let rawData = ["_id":emailAddr , "password":pwd]
         do{
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(rawData, options: .PrettyPrinted)
-            let jsonStr = NSString(data: jsonData, encoding: NSUTF8StringEncoding)
-            if let encodeStr = jsonStr?.dataUsingEncoding(NSUTF8StringEncoding){
-                let base64Data = encodeStr.base64EncodedDataWithOptions(.Encoding64CharacterLineLength)
+            let jsonData = try JSONSerialization.data(withJSONObject: rawData, options: .prettyPrinted)
+            let jsonStr = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
+            if let encodeStr = jsonStr?.data(using: String.Encoding.utf8.rawValue){
+                let base64Data = encodeStr.base64EncodedData(options: .lineLength64Characters)
                 let (blRst , jsonRst) = httpHandler.httpCall("appinit/reg", queryPara: [:],  httpMethod: HTTP_METHOD.POST.rawValue , uploadData: base64Data)
                 if(blRst){
                     if let httpRst = jsonRst?.getValue("result"){

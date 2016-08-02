@@ -16,12 +16,12 @@ enum HTTP_METHOD: String {
 }
 
 enum SEMAHORE: Int {
-    case HTTP_CALL = 0
+    case http_CALL = 0
 }
 
 enum REST_RESULT: Int{
-    case SUCCESS = 0
-    case FAILED = -1
-    case VERIFIED = 1
-    case NO_DATA = 2
+    case success = 0
+    case failed = -1
+    case verified = 1
+    case no_DATA = 2
 }

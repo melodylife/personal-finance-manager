@@ -10,7 +10,7 @@
 		702848891D2617110066622C /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702848881D2617110066622C /* JsonParser.swift */; };
 		7028488B1D2663880066622C /* HTTPRequestCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7028488A1D2663880066622C /* HTTPRequestCaller.swift */; };
 		7028488D1D2664FF0066622C /* BasicDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7028488C1D2664FF0066622C /* BasicDefinition.swift */; };
-		7028489B1D27C9D80066622C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7028489A1D27C9D80066622C /* GoogleService-Info.plist */; };
+		7042323A1D2BB8C20067139B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704232391D2BB8C20067139B /* GoogleService-Info.plist */; };
 		7056D23A1D1E53CC009BE9FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D2391D1E53CC009BE9FC /* AppDelegate.swift */; };
 		7056D23C1D1E53CC009BE9FC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */; };
 		7056D23F1D1E53CC009BE9FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7056D23D1D1E53CC009BE9FC /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 		702848881D2617110066622C /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		7028488A1D2663880066622C /* HTTPRequestCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestCaller.swift; sourceTree = "<group>"; };
 		7028488C1D2664FF0066622C /* BasicDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDefinition.swift; sourceTree = "<group>"; };
-		7028489A1D27C9D80066622C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		704232391D2BB8C20067139B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7056D2361D1E53CC009BE9FC /* Personal Financial Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personal Financial Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7056D2391D1E53CC009BE9FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7056D23B1D1E53CC009BE9FC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		7056D2381D1E53CC009BE9FC /* Personal Financial Management */ = {
 			isa = PBXGroup;
 			children = (
-				7028489A1D27C9D80066622C /* GoogleService-Info.plist */,
+				704232391D2BB8C20067139B /* GoogleService-Info.plist */,
 				7056D2391D1E53CC009BE9FC /* AppDelegate.swift */,
 				7028488F1D269DA80066622C /* Utils */,
 				7028488E1D269D280066622C /* ViewControllers */,
@@ -157,7 +157,8 @@
 				TargetAttributes = {
 					7056D2351D1E53CC009BE9FC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 65Q8DMYU84;
+						DevelopmentTeam = EQHXZ8M8AV;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -185,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7056D2441D1E53CC009BE9FC /* LaunchScreen.storyboard in Resources */,
-				7028489B1D27C9D80066622C /* GoogleService-Info.plist in Resources */,
+				7042323A1D2BB8C20067139B /* GoogleService-Info.plist in Resources */,
 				7056D2411D1E53CC009BE9FC /* Assets.xcassets in Resources */,
 				7056D23F1D1E53CC009BE9FC /* Main.storyboard in Resources */,
 			);
@@ -373,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "changchangyo.Personal-Financial-Management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -388,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "changchangyo.Personal-Financial-Management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
