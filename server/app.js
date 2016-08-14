@@ -2,6 +2,9 @@
 
 var express = require('express');
 var path = require('path');
+var https = require('https');
+var http = require('http');
+var fs = require("fs");
 //var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -15,6 +18,9 @@ var healthcheckhandler = require('./routes/healthcheck');
 
 //homebrew middleware
 var jsonParser = require('./util/middleware/jsonParser');
+
+//Here's the password to unpack the key file
+var certpwd = require('./conf/certpwd.json');
 
 var app = express();
 
@@ -72,6 +78,16 @@ app.use(function(err, req, res, next) {
 
 console.log('started@' + conf.port);
 
-app.listen(conf.port);
+//app.listen(conf.port);
+
+var options = {
+  cert:fs.readFileSync('./conf/certs/2_changworkshop.com.crt'),
+  key:fs.readFileSync('./conf/certs/test.key'),
+  ca:fs.readFileSync('./conf/certs/root.crt'),
+  passphrase: certpwd.pwd 
+}
+
+http.createServer(app).listen(conf.port);
+https.createServer(options, app).listen(conf.sslport);
 
 module.exports = app;
