@@ -23,7 +23,11 @@ var finBookBodySchema = new schema({
   payment: {
     amount: Number,
     currency: {type: String , default: "CNY"},
-    loc: String
+    loc: String,
+    method:{
+      pay_method: {type: String},
+      pay_info: {type: String}
+    }
   },
   amount: Number,
 });
