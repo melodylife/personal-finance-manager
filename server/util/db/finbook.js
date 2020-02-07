@@ -23,8 +23,11 @@ var finBookBodySchema = new schema({
   payment: {
     amount: Number,
     currency: {type: String , default: "CNY"},
-    loc: String
-
+    loc: String,
+    method:{
+      pay_method: {type: String},
+      pay_info: {type: String}
+    }
   },
   amount: Number,
 });
@@ -37,14 +40,14 @@ exports.createNewFinBook = function(jsonStr , res){
   util.saveTable("Financial Book" , finBookHeader , res)  
 }
 
-exports.createNewRec = function(jsonStr , res){
-  var bookWithName = JSON.parse(jsonStr);
-  var bookName = bookWithName.bookname;
+exports.createNewRec = function(bookWithName , res){
+  //var bookWithName = JSON.parse(jsonStr);
+  var bookName = bookWithName.bookName;
   var rec = new Object();
   rec.createDate = bookWithName.date;
   rec.payment = bookWithName.payment;
   rec.amount = bookWithName.amount;
-  
-  var finBookRec = mongoose.model(bookName , finBookBodySchema);
-  util.saveTable("Financial Record" , finBook , res);
+  var finBookModel = mongoose.model(bookName , finBookBodySchema);
+  var finBookRec = new finBookModel(rec);
+  util.saveTable("Financial Record" , finBookRec , res);
 }

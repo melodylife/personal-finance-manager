@@ -14,6 +14,7 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var tblOperations = require('./routes/tblOps');
 var appinit = require('./routes/appinit');
+var finbook = require('./routes/finbook');
 var healthcheckhandler = require('./routes/healthcheck');
 
 //homebrew middleware
@@ -43,6 +44,7 @@ app.use('/', routes);
 app.use('/appinit', appinit);
 app.use('/tblOps' , tblOperations);
 app.use('/healthcheck' , healthcheckhandler);
+app.use('/finbook' , finbook);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
