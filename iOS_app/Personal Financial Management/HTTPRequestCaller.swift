@@ -28,7 +28,7 @@ class HTTPRequestCaller{
         let (blRst , jsonRst): (Bool , JsonParser?) = httpCall(path, queryPara: [:], httpMethod: method, uploadData: nil)
         
         //The getValue returns AnyObject. So it needs explicitly type casting. 
-        return blRst && (REST_RESULT.success.rawValue == Int(jsonRst!.getValue("result") as! NSNumber))
+        return blRst && (REST_RESULT.success.rawValue == Int(truncating: jsonRst!.getValue("result") as! NSNumber))
     }
     
     //Universal http request handler

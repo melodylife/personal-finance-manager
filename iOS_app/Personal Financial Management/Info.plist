@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>Service URL</key>
-	<string>http://104.155.193.135:1088</string>
+	<string>http://104.199.194.247:1088</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

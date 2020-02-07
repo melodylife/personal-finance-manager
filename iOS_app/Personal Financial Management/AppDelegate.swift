@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,18 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        FIRApp.configure()
+        //FirebaseApp.configure()
         // Override point for customization after application launch.
-        let serviceCheck = HTTPRequestCaller()
-        if(serviceCheck.isConnected()){
-            FIRAnalytics.logEvent(withName: "ServiceOn", parameters: [:])
+        _ = HTTPRequestCaller()
+       /* if(serviceCheck.isConnected()){
+            Analytics.logEvent("ServiceOn", parameters: [:])
         }
         else{
-            FIRAnalytics.logEvent(withName: "ServiceDown", parameters: [:])
+            Analytics.logEvent("ServiceDown", parameters: [:])
         }
-        FIRAnalytics.logEvent(withName: "OpenApp", parameters: [:])
+        Analytics.logEvent("OpenApp", parameters: [:])*/
         return true
     }
 
